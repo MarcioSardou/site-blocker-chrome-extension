@@ -1,44 +1,112 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Site Blocker</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      padding: 10px;
-      width: 300px;
+      font-family: 'Arial', sans-serif;
+      width: 320px;
+      padding: 15px;
+      background-color: #f4f4f4;
+      text-align: center;
     }
+    
+    h2 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+    
+    .btn-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
     button {
-      margin: 5px 0;
-      padding: 10px;
-      width: 100%;
+      padding: 12px;
+      font-size: 14px;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
       cursor: pointer;
+      transition: 0.3s;
     }
+    
+    #block-btn {
+      background-color: #e74c3c;
+      color: white;
+    }
+
+    #block-btn:hover {
+      background-color:#c0392b;
+    }
+
+    #unblock-btn {
+      background-color: #3498db;
+      color: white;
+    }
+
+    #unblock-btn:hover {
+      background-color: #2980b9;
+    }
+
     ul {
-      list-style-type: none;
+      list-style: none;
       padding: 0;
+      max-height: 200px;
+      overflow-y: auto;
+      background: white;
+      border-radius: 5px;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
     }
+
     li {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 5px;
-      border: 1px solid #ccc;
-      margin-bottom: 5px;
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      font-size: 14px;
     }
+
+    li:last-child {
+      border-bottom: none;
+    }
+
     .remove-btn {
       background-color: #ff4d4d;
       color: white;
       border: none;
       padding: 5px 10px;
       cursor: pointer;
+      border-radius: 3px;
+      transition: 0.3s;
     }
+
+    .remove-btn:hover {
+      background-color: #cc0000;
+    }
+
   </style>
 </head>
 <body>
-  <button id="block-btn">Bloquear site atual</button>
-  <button id="unblock-btn">Desbloquear site atual</button>
-  <ul id="blocked-sites-list"></ul>
+
+  <h2>Site Blocker</h2>
+
+  <div class="btn-container">
+    <button id="block-btn">🔒 Block Current Site</button>
+    <button id="unblock-btn">🔓 Unblock Current Site</button>
+  </div>
+
+  <h3>Blocked Sites</h3>
+  <ul id="blocked-sites-list">
+    <!-- Blocked sites will be listed here -->
+  </ul>
+
   <script src="popup.js"></script>
+
 </body>
 </html>

@@ -9,6 +9,9 @@
         "storage",
         "tabs"
     ],
+    "icons": {
+        "16": "ico.png"
+      },
     "host_permissions": [
         "<all_urls>"
     ],
@@ -17,7 +20,6 @@
     },
     "action": {
         "default_title": "Clique para alternar",
-        "default_icon": "./icon.png",
         "default_popup": "popup.html"
     }
 }
